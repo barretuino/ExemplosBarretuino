@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RelatorioJavaBeans" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f481b7e-9dbd-4abf-9167-77104a9c8c5a">
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="preco" class="java.lang.Double">
+		<fieldDescription><![CDATA[preco]]></fieldDescription>
+	</field>
+	<field name="qtdEstoque" class="java.lang.Integer">
+		<fieldDescription><![CDATA[qtdEstoque]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" uuid="09ebbd2f-bffd-4306-a650-0db375f73d9c"/>
+				<box>
+					<topPen lineWidth="0.75" lineColor="#333333"/>
+					<bottomPen lineWidth="0.75" lineColor="#333333"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produtos Cadastrados]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="555" height="25" forecolor="#CCDDF1" backcolor="#EEF6FF" uuid="94d02984-75da-4d05-8b79-de0be7248bf1"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="90" y="1" width="213" height="25" uuid="9171bee2-78bf-4b8f-bb1a-c196820e5171"/>
+				<box leftPadding="5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Produto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="322" y="-2" width="100" height="25" uuid="dc73df19-eca0-4066-b522-33d3d9701d36"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Qtd. em Estoque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="436" y="-2" width="71" height="25" uuid="d27cfdea-3301-41a2-a280-6ba53e876049"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Preço em R$]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="1" width="70" height="25" uuid="b4fa6d76-5866-4ec4-aaca-2d16109ecd36"/>
+				<textElement verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="90" y="8" width="213" height="20" uuid="fa41acbf-e575-4e0d-bc10-8e2e035fc134"/>
+				<box leftPadding="5"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="322" y="8" width="100" height="20" uuid="fcd2ed5f-2f66-4405-a6c7-ec8ff08ac4d1"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{qtdEstoque}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="31" width="555" height="1" uuid="0e589acd-ca3f-47a7-becd-58e251e1c00a"/>
+			</line>
+			<textField pattern="#,##0.00">
+				<reportElement x="436" y="8" width="50" height="20" uuid="025ca91c-ffe8-4d7c-b717-f118d3c56399"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{preco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="8" width="70" height="20" uuid="b0cf7da7-bc2f-4d04-99b1-db19fa6d1f7a"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="422" y="14" width="97" height="20" uuid="d6a2b8dc-4b6a-4091-aec0-8056c01a19b5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER} + " de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="519" y="14" width="36" height="20" uuid="99d01752-1dd8-4b02-a861-fdc5daa05b98"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
